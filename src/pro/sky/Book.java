@@ -4,13 +4,14 @@ import java.util.Objects;
 
 public class Book {
     private final String bookName;
-    private Author authorName;
+    private Author author;
     private int publishingYear;
 
 
 
-    public Book(String bookName, Author authorName, int publishingYear) {
+    public Book(String bookName, Author author, int publishingYear) {
         this.bookName = bookName;
+        this.author = author;
         this.publishingYear = publishingYear;
     }
 
@@ -18,7 +19,7 @@ public class Book {
     public String toString() {
         return "Книга: " +
                 "Название '" + bookName + '\'' +
-                ", Имя автора " + authorName + '\'' +
+                ", Имя автора " + getAuthorName().toString() + '\'' +
                 ", год издания " + publishingYear;
     }
 
@@ -27,12 +28,12 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return publishingYear == book.publishingYear && Objects.equals(bookName, book.bookName) && Objects.equals(authorName, book.authorName);
+        return publishingYear == book.publishingYear && Objects.equals(bookName, book.bookName) && Objects.equals(author, book.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookName, authorName, publishingYear);
+        return Objects.hash(bookName, author, publishingYear);
     }
 
     public String getBookName() {
@@ -40,7 +41,7 @@ public class Book {
     }
 
     public Author getAuthorName() {
-        return this.authorName;
+        return this.author;
     }
 
     public int getPublishingYear() {

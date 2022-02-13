@@ -6,7 +6,7 @@ public class Author {
 
     private final String authorFirstName;
     private final String authorLastName;
-    private Author authorName;
+//    private Author authorName;
 
     public Author(String authorFirstName, String authorLastName) {
         this.authorFirstName = authorFirstName;
